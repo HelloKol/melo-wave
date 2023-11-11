@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: black;
+  background: rgb(33,58,243);
+  background: linear-gradient(205deg, rgba(33,58,243,1) 0%, rgba(162,172,250,1) 30%, rgba(255,255,255,0) 37%) no-repeat;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+article p {
+  margin: 0 0 30px 0;
+}
+
+/* Custom styling for the volume input slider */
+.volumeControl input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #ccc;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Custom styling for the thumb of the volume input slider */
+.volumeControl input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+}
+
+.volumeControl input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: goldenrod;
+  cursor: pointer;
+}
+
+/* Custom styling for the left side of the thumb */
+.volumeControl input[type="range"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Custom styling for the volume input slider */
+.volumeControl input[type="range"] {
+  /* ... Your existing styles ... */
+  background: linear-gradient(
+      to right,
+      black calc(var(--value, 0) * 100%),
+      white 0
+    )
+    no-repeat center/ 100% 100%;
+}
+
+/* Custom styling for the volume input slider */
+.volumeControl input[type="range"] {
+  /* ... Your existing styles ... */
+  background-color: transparent;
+  position: relative;
+}
+
+/* Styling for the left side of the volume input */
+.volumeControl input[type="range"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--value, 0%); /* Adjust the width based on volume */
+  background-color: black; /* Color for the left side */
+  z-index: -1; /* Place it behind the input */
+}
+
+/* Styling for the volume input slider */
+.controls .volume-slider input[type="range"] {
+  /* Reset default styles */
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+
+  /* Your custom styles */
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    black var(--value, 0%),
+    white var(--value, 0%)
+  );
+  border-radius: 2.5px;
+  outline: none;
+  cursor: pointer;
+
+  /* Customize thumb appearance */
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
